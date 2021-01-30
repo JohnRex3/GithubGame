@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     //Update is called once per frame
     void Update () {
+        if (!isAlive) { return; }
+
         Run();
         Jump();
         FlipSprite();
@@ -48,6 +50,11 @@ public class Player : MonoBehaviour
             Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
             myRigidBody.velocity += jumpVelocityToAdd;
         }
+    }
+
+    private void Die()
+    {
+
     }
     private void FlipSprite()
     {
